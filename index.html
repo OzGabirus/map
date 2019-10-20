@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
+  <!-- HEAD -->
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta charset="utf-8" />
     <title>MAP</title>
     <link rel="stylesheet" href="map.css" />
   </head>
+  <!-- BODY -->
   <body>
+    <input
+      id="search-box"
+      class="controls"
+      type="text"
+      placeholder="Search the place"
+    />
     <div id="map"></div>
+    <!-- FOOTER -->
     <footer>
-      <script src="map.js" defer></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="style.js"></script>
+      <script src="map.js"></script>
       <script
         async
         defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9XZ_hbHL1ZXIR6weWhGc3UcAd5EcCktI&callback=initMap"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9XZ_hbHL1ZXIR6weWhGc3UcAd5EcCktI&libraries=places,visualization&callback=initMap"
       ></script>
     </footer>
   </body>
