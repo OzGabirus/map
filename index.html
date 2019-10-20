@@ -5,12 +5,14 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta charset="utf-8" />
     <title>MAP</title>
-    <link rel="icon" href="assets/img/on.svg">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/font-awesome.min.css">
+    <link rel="icon" href="assets/img/on.svg" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="assets/css/map.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -26,76 +28,121 @@
         type="text"
         placeholder="Search the place"
       />
-      <a class="dropdown-trigger btn button-map" data-target="drop-button">FILTRO</a>
+      <a class="dropdown-trigger btn button-map" data-target="drop-button"
+        >FILTRO</a
+      >
       <ul id="drop-button" class="dropdown-content">
         <li><a id="enviar">Gráficos</a></li>
         <div class="divider"></div>
+        <div class="container">
+          <form action="#">
+            <div class="row">
+              <div class="col s12 center-align">
+                <label>
+                  <input
+                    id="natural_theme"
+                    class="with-gap"
+                    name="theme"
+                    type="radio"
+                    checked
+                  />
+                  <span>Natural Theme</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 center-align">
+                <label>
+                  <input
+                    id="dark_theme"
+                    class="with-gap"
+                    name="theme"
+                    type="radio"
+                  />
+                  <span>Dark Theme</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 center-align">
+                <label>
+                  <input
+                    id="gray_theme"
+                    class="with-gap"
+                    name="theme"
+                    type="radio"
+                  />
+                  <span>Gray Theme</span>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
       </ul>
       <div id="map"></div>
     </section>
     <section id="graph_area">
-        <header>
-          <ul
-            class="sidenav sidenav-fixed"
-            style="background: #82BFD9;"
-          >
+      <header>
+        <ul class="sidenav sidenav-fixed" style="background: #82BFD9;">
           <div id="particles-js"></div>
-            <li style="padding: 40px;">
-              <div class="user-view">
-                  <img src="assets/img/on.svg" width="100%" height="100%" />
-              </div>
-            </li>
-            <li>
-              <a id="voltar" style="color: white" href="#!">
-                <i class="fab fa-cloudversify fa-lg white-text"></i>Voltar
-              </a>
-            </li>
-            <li>
-              <a style="color: white" href="#!">
-                <i class="fa fa-smog fa-lg white-text"></i>Gas
-              </a>
-            </li>
-            <li>
-              <a style="color: white" href="#!">
-                <i class="fa fa-chart-bar fa-lg white-text"></i>Graph
-              </a>
-            </li>
-            <li style="margin-left: 30px;">
-              <a id="lines" style="color: white" href="#!">
-                <i class="fa fa-chart-bar fa-lg white-text"></i>Lines
-              </a>
-            </li>
-            </li>
-            <li style="margin-left: 30px;">
-              <a id="dots" style="color: white" href="#!"
-                ><i class="fa fa-chart-bar fa-lg white-text"></i>Dots</a>
-            </li>
-            </li>
-            <li style="margin-left: 30px;">
-              <a id="bar" style="color: white" href="#!"
-                ><i class="fa fa-chart-bar fa-lg white-text"></i>Bar </a>
-            </li>
-          </ul>
-        </header>
-        
-        <main class="row banner_message">
-          <section class="container col s12 graph_area"></section>
-          <section></section>
-        </main>
+          <li style="padding: 40px;">
+            <div class="user-view">
+              <img src="assets/img/on.svg" width="100%" height="100%" />
+            </div>
+          </li>
+          <li>
+            <a id="voltar" style="color: white" href="#!">
+              <i class="fab fa-cloudversify fa-lg white-text"></i>Voltar
+            </a>
+          </li>
+          <li>
+            <a style="color: white" href="#!">
+              <i class="fa fa-smog fa-lg white-text"></i>Gas
+            </a>
+          </li>
+          <li>
+            <a style="color: white" href="#!">
+              <i class="fa fa-chart-bar fa-lg white-text"></i>Graph
+            </a>
+          </li>
+          <li style="margin-left: 30px;">
+            <a id="lines" style="color: white" href="#!">
+              <i class="fa fa-chart-bar fa-lg white-text"></i>Lines
+            </a>
+          </li>
+          <li style="margin-left: 30px;">
+            <a id="dots" style="color: white" href="#!"
+              ><i class="fa fa-chart-bar fa-lg white-text"></i>Dots</a
+            >
+          </li>
+          <li style="margin-left: 30px;">
+            <a id="bar" style="color: white" href="#!"
+              ><i class="fa fa-chart-bar fa-lg white-text"></i>Bar
+            </a>
+          </li>
+        </ul>
+      </header>
+
+      <main class="row banner_message">
+        <section class="container col s12 graph_area"></section>
+        <section></section>
+      </main>
     </section>
-      <footer>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script src="assets/js/script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <script src="assets/js/style.js"></script>
-        <script src="assets/js/map.js"></script>
-        <script
+    <footer>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src="assets/js/graph.js"></script>
+      <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="assets/js/style.js"></script>
+      <script src="assets/js/map.js"></script>
+      <script
         async
         defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9XZ_hbHL1ZXIR6weWhGc3UcAd5EcCktI&libraries=places,visualization&callback=initMap"
-        ></script>
-      </footer>
-    </body>
-  </html>
+      ></script>
+    </footer>
+  </body>
+</html>

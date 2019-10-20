@@ -13,19 +13,12 @@ $(document).ready(function() {
     hover: true,
     coverTrigger: false
   });
-  $("#filtro_btn").hover(function() {
-    $("#filtro").fadeIn();
-  });
-  $("#filtro").on("click", function() {
-    $("#filtro").fadeOut();
-  });
-  $("#dark_tema").on("click", function() {
-    refresh_map(dark_tema);
-    map.setOptions({ styles: myStyle });
+  $('input[name="theme"]').on("click", function() {
+    let name_theme = $(this).attr("id");
   });
 });
 
-function theme_map(lat, long, zoom, style, idElement) {
+function mapInitializer(lat, long, zoom, style, idElement) {
   let map = new google.maps.Map(document.getElementById(idElement), {
     center: { lat: lat, lng: long },
     zoom: zoom,
@@ -34,9 +27,10 @@ function theme_map(lat, long, zoom, style, idElement) {
   return map;
 }
 
-function refresh_map(name_tema) {
-  var map = theme_map(-34.397, 80.644, 10, dark_theme, "map");
+function mapRefresh(name_theme) {
+  var map = mapInitializer(-34.397, 80.644, 3, dark_theme, "map");
   var input = document.getElementById("search-box");
+  var search_box = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 }
 
@@ -48,7 +42,7 @@ async function fetch_data_api(url) {
 
 async function initMap() {
   // DOM envs
-  var map = theme_map(-34.397, 80.644, 10, dark_theme, "map");
+  var map = mapInitializer(-34.397, 80.644, 10, dark_theme, "map");
   var infoWindow = new google.maps.InfoWindow();
   var geocoder = new google.maps.Geocoder();
   var heatmap_data = [];
