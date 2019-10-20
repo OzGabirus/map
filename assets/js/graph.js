@@ -11968,30 +11968,30 @@ function data_start(type) {
   console.log(data_graph);
   var trace1 = {
     x: gosto.co,
-    type: type
+    type: "scatter"
   };
 
   var trace2 = {
     x: gosto.no2,
-    type: type
+    type: "scatter"
   };
 
   var trace3 = {
     x: gosto.o3,
-    type: type
+    type: "scatter"
   };
 
   var trace4 = {
     x: gosto.pm10,
-    type: type
+    type: "scatter"
   };
   var trace5 = {
     x: gosto.pm25,
-    type: type
+    type: "scatter"
   };
   var trace6 = {
     x: gosto.so2,
-    type: type
+    type: "scatter"
   };
 
   return [trace1, trace2, trace3, trace4, trace5, trace6];
@@ -12033,13 +12033,27 @@ function data_start_mode(type) {
 
 $(document).ready(function() {
   //START
+  let a = ["CO", "NO2", "O3", "PM10", "PM25", "SO2"];
   for (let i = 0; i < data.length; i++) {
+    var layout = {
+      title: "Particula: " + a[i],
+      xaxis: {
+        title: "Year",
+        showgrid: false,
+        zeroline: false
+      },
+      yaxis: {
+        title: "Percent",
+        showline: false
+      }
+    };
+
     let graph =
       '<div class="center" id="graph' +
       i.toString() +
       '"style="width:800px;height:400px;"></div>';
     $(".graph_area").append(graph);
-    Plotly.newPlot("graph" + i.toString(), data);
+    Plotly.newPlot("graph" + i.toString(), [data[i]], layout);
   }
 });
 
