@@ -1,4 +1,12 @@
 var url = "http://10.3.121.243:3333/api/v1/geolocation";
+var marker_colors = {
+  0: "green",
+  1: "yellow",
+  2: "orange",
+  3: "red",
+  4: "purple",
+  5: "blue"
+};
 
 async function fetch_data_api(url) {
   var data_json = (await fetch(url)).json();
@@ -12,7 +20,7 @@ async function initMap() {
     center: { lat: -34.397, lng: 150.644 },
     zoom: 6,
     // mapTypeId: "satellite",
-    styles: natural_theme
+    styles: black_theme
   });
   var infoWindow = new google.maps.InfoWindow();
   var geocoder = new google.maps.Geocoder();
@@ -52,22 +60,45 @@ async function initMap() {
   }
 
   var data_coordinates = await fetch_data_api(url);
-  var wind_points = [];
+  var markers = [],
+    info_windows = [];
   for (let i = 0; i < 100; i++) {
-    wind_points.push(
-      new google.maps.LatLng(
+    let url = "http://maps.google.com/mapfiles/ms/icons/";
+    url += marker_colors[i % 6] + "-dot.png";
+    markers[i] = new google.maps.Marker({
+      position: new google.maps.LatLng(
         data_coordinates[i].latitude,
         data_coordinates[i].longitude
-      )
-    );
+      ),
+      map: map,
+      icon: {
+        url: url
+      }
+      // label: atributo_tabela
+    });
+    info_windows[i] = new google.maps.InfoWindow({
+      content:
+        '<div class="container">\
+      <div class="title center-align">Titulo</div>\
+      <hr />\
+      <div class="row">\
+        <div class="col-s12">BLA1: ...</div>\
+        <div class="col-s12">BLA2: ...</div>\
+        <div class="col-s12">BLA3: ...</div>\
+      </div>\
+    </div>'
+    });
+
+    markers[i].addListener("click", function() {
+      info_windows[i].open(map, markers[i]);
+    });
   }
 
   // heatmap
-  var heatmap = new google.maps.visualization.HeatmapLayer({
-    // data: [new google.maps.LatLng(37.782, -122.447)]
-    data: wind_points
-  });
-  heatmap.setMap(map);
+  // var heatmap = new google.maps.visualization.HeatmapLayer({
+  //   data: wind_points
+  // });
+  // heatmap.setMap(map);
 
   // listeners
   map.addListener("click", function() {});
@@ -96,6 +127,13 @@ async function initMap() {
     map.fitBounds(bounds);
     search_box.set("map", map);
     map.setZoom(Math.min(map.getZoom(), 12));
+    google.maps.event.addListener(marker, "click", function() {
+      if (infoWindow) {
+        infoWindow.close();
+      }
+      infoWindow = new google.maps.InfoWindow({ content: "dasdasd" });
+      infoWindow.open(map, marker);
+    });
   });
 }
 
@@ -107,4 +145,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       : "Error: Your browser doesn't support geolocation."
   );
   infoWindow.open(map);
+}
+
+function addMarker(location, map) {
+  var marker = new google.maps.Marker({
+    position: location,
+    label: labels[labelIndex++ % labels.length],
+    map: map
+  });
 }
