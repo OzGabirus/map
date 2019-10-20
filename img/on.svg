@@ -1,0 +1,58 @@
+<svg id="Componente_2_1" data-name="Componente 2 – 1" xmlns="http://www.w3.org/2000/svg" width="696.316" height="278" viewBox="0 0 696.316 278">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        stroke: #707070;
+      }
+
+      .cls-2, .cls-3, .cls-6 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #d2d6d8;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+        stroke-width: 10px;
+      }
+
+      .cls-4 {
+        font-size: 209px;
+        font-family: SegoeUI-Bold, Segoe UI;
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Logo" transform="translate(-441 -513)">
+    <g id="Elipse_5" data-name="Elipse 5" class="cls-1" transform="translate(818 574)">
+      <circle class="cls-5" cx="44.5" cy="44.5" r="44.5"/>
+      <circle class="cls-6" cx="44.5" cy="44.5" r="44"/>
+    </g>
+    <g id="Elipse_6" data-name="Elipse 6" class="cls-2" transform="translate(781 691)">
+      <ellipse class="cls-5" cx="40.5" cy="40" rx="40.5" ry="40"/>
+      <ellipse class="cls-6" cx="40.5" cy="40" rx="39" ry="38.5"/>
+    </g>
+    <g id="Grupo_1" data-name="Grupo 1" transform="translate(-61.178 28.669)">
+      <line id="Linha_1" data-name="Linha 1" class="cls-3" y1="140.331" x2="55.179" transform="translate(983.5 574.5)"/>
+      <line id="Linha_2" data-name="Linha 2" class="cls-3" x1="31.336" y1="140.331" transform="translate(1039.36 574.5)"/>
+      <line id="Linha_3" data-name="Linha 3" class="cls-3" x2="50.41" transform="translate(1007.343 654.884)"/>
+      <line id="Linha_4" data-name="Linha 4" class="cls-3" y2="134.2" transform="translate(1099.307 574.5)"/>
+      <line id="Linha_5" data-name="Linha 5" class="cls-3" y2="134.2" transform="translate(1138.136 574.5)"/>
+      <line id="Linha_6" data-name="Linha 6" class="cls-3" x1="56.541" y1="66.759" transform="translate(1138.136 574.5)"/>
+      <line id="Linha_7" data-name="Linha 7" class="cls-3" x1="34.061" y2="27.249" transform="translate(1160.617 641.259)"/>
+      <line id="Linha_8" data-name="Linha 8" class="cls-3" x1="34.061" y1="40.192" transform="translate(1160.617 668.508)"/>
+    </g>
+  </g>
+  <text id="ON" class="cls-4" transform="translate(0 226)"><tspan x="0" y="0">ON</tspan></text>
+</svg>

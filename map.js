@@ -67,7 +67,11 @@ async function initMap() {
     // data: [new google.maps.LatLng(37.782, -122.447)]
     data: wind_points
   });
-  heatmap.setMap(map);
+  // heatmap.setMap(map);
+
+  // heatmap.addListener("click", function() {
+  //   console.log("deubom");
+  // });
 
   // listeners
   map.addListener("click", function() {});
