@@ -1,0 +1,63 @@
+#map {
+  height: 100%;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  width: 100%;
+  height: 70vh;
+  background-color: #82bfd9;
+  margin: 50px;
+}
+
+.banner_message {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 50px;
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 10px;
+}
+
+.check_space {
+  text-align: center;
+  display: inline-flex;
+}
+
+.check_space span {
+  padding-left: 25px !important;
+  padding-right: 10px;
+}
+
+header,
+main,
+footer {
+  padding-left: 300px !important;
+}
+
+.graph-area {
+  z-index: 50;
+}
+
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  footer {
+    padding-left: 0;
+  }
+}
+
+#graph_area {
+  display: none;
+}
