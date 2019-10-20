@@ -15,12 +15,25 @@
       type="text"
       placeholder="Search the place"
     />
+    <div
+      id="filtro_btn"
+      style="position: absolute; right: 0; top: 0; width: 50px; height: 50px; background-color: white; z-index:10000"
+    >
+      <h1>+</h1>
+    </div>
+    <div
+      id="filtro"
+      style="display:none;position: absolute; right: 0; top: 0; width: 300px; height: 300px; background-color: white; z-index:10000;"
+    >
+      <h3 style="text-align: center;">Opções</h3>
+      <input type="checkbox" name="" id="dark_tema" />
+    </div>
     <div id="map"></div>
     <!-- FOOTER -->
     <footer>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="style.js"></script>
-      <script src="map.js"></script>
+      <script src="map-henrique.js"></script>
       <script
         async
         defer
